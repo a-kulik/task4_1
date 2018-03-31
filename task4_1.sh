@@ -1,5 +1,7 @@
 #!/bin/bash
-y=task4_1.out
+dir_pwd=$(dirname "$0")
+dir_pwd=$(cd "$dir_pwd" && pwd)
+y=$dir_pwd/task4_1.out
 echo "--- Hardware ---" > $y
 #----------------//cpuinfo
 x=`cat /proc/cpuinfo | grep 'model name' -m 1| cut -d : -f2 |sed 's/^[ \t]*//'`
